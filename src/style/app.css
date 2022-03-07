@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Poppins&display=swap');
+
+:root {
+  --bg: #c9d6ff;
+  --main: #a8a2ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Gugi', cursive;
+  font-family: 'Poppins', sans-serif;
+  background-color: #8e9eab;
+}
+
+a {
+  text-decoration: none;
+  color: #7582bb;
+}
+a:hover {
+  color: #1c39bb;
+}
+li {
+  list-style-type: none;
+}
+button {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #7582bb;
+  margin: auto 0.4rem;
+}
+button:hover {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #1c39bb;
+}

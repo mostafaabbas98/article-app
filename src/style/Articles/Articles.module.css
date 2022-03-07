@@ -1,0 +1,18 @@
+.ArticleItem {
+  width: 90%;
+  background-color: #fff;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .ArticleItem {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

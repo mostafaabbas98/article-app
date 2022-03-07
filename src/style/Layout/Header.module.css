@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.logo {
+  color: #4059c9;
+}
+a.active {
+  color: #2341c9;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding-bottom: 0rem;
+    padding: 0.5rem;
+  }
+  .logo {
+    font-size: 0.9rem;
+  }
+  .nav {
+    gap: 1rem;
+  }
+  .header button {
+    padding: 0.4rem;
+    margin: 0;
+  }
+}

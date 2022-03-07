@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom'
+
+import Layout from './components/Layout/Layout'
+import Home from './page/Home'
+import Login from './page/Login'
+import SignUp from './page/SignUp'
+import ForgetPassword from './page/ForgetPassword'
+import AddArticle from './page/AddArticle'
+import PageNotFound from './page/PageNotFound'
+import RequiredAuth from './components/Layout/RequireAuth'
+import RequiredNotAuth from './components/Layout/RequireNotAuth'
+import ArticleDetail from './page/ArticleDetail'
+
+import './style/app.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Layout>
+      <Routes>
+        <Route path='/' element={<Navigate to='/home' replace />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='home/:id' element={<ArticleDetail />} />
+        <Route element={<RequiredNotAuth />}>
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/forget-password' element={<ForgetPassword />} />
+        </Route>
+        <Route element={<RequiredAuth />}>
+          <Route path='/add-article' element={<AddArticle />} />
+        </Route>
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
+    </Layout>
+  )
 }
 
-export default App;
+export default App
