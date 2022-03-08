@@ -17,9 +17,13 @@ const SignUp = () => {
   const formSubmitHandler = async (e) => {
     e.preventDefault()
 
+    if (password !== passwordConfirm) {
+      return alert('Please enter Same password in confirm password')
+    }
+
     await signUp(email, password)
       .then(() => {})
-      .catch((error) => console.log(error.message))
+      .catch((error) => alert(error.message))
 
     await createAccount(name)
       .then(() => {
@@ -35,6 +39,7 @@ const SignUp = () => {
         <div className={style.formGroup}>
           <label htmlFor='name'>NickName</label>
           <input
+            required
             id='name'
             autoComplete=''
             type='text'
@@ -45,6 +50,7 @@ const SignUp = () => {
         <div className={style.formGroup}>
           <label htmlFor='email'>Email Address</label>
           <input
+            required
             id='email'
             autoComplete=''
             type='email'
@@ -55,6 +61,7 @@ const SignUp = () => {
         <div className={style.formGroup}>
           <label htmlFor='password'>Password</label>
           <input
+            required
             id='password'
             autoComplete=''
             type='password'
@@ -65,6 +72,7 @@ const SignUp = () => {
         <div className={style.formGroup}>
           <label htmlFor='passwordConfirm'>Confirm Password</label>
           <input
+            required
             id='passwordConfirm'
             autoComplete=''
             type='password'

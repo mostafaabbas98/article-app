@@ -31,7 +31,7 @@ const Login = () => {
       componentMounted.current && setPassword('')
       navigate(from, { replace: true })
     } catch (error) {
-      console.log(error.message)
+      alert(error.message)
     }
   }
 
@@ -50,6 +50,7 @@ const Login = () => {
         <div className={style.formGroup}>
           <label htmlFor='email'>Email Address</label>
           <input
+            required
             id='email'
             type='email'
             autoComplete=''
@@ -60,6 +61,7 @@ const Login = () => {
         <div className={style.formGroup}>
           <label htmlFor='password'>Password</label>
           <input
+            required
             id='password'
             autoComplete=''
             type='password'
